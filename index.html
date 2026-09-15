@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munna Bhaiya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #094754 0%, #0a1118 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .card {
+            background: #151f2b;
+            border-radius: 25px;
+            padding: 40px 25px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Yahan CSS mein change kiya hai taaki badge center mein rahe */
+        .top-badge {
+            background-color: #1a4235;
+            color: #4ade80;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: block; 
+            width: max-content; 
+            margin: 0 auto 25px auto; 
+        }
+
+        /* Yahan CSS mein change kiya hai taaki photo center mein rahe */
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block; 
+            margin: 0 auto 20px auto; 
+            border: 2px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            color: #a0aec0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 35px;
+        }
+
+        .timer-text {
+            color: #a0aec0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .timer-countdown {
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .subscribe-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(180deg, #3d1b0d, #140803);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 2px solid #ffffff;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 40px -10px rgba(74, 222, 128, 0.6); 
+            transition: all 0.3s ease;
+        }
+        
+        .subscribe-btn i {
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            margin-bottom: 25px;
+        }
+
+        .disclaimer {
+            color: #718096;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="top-badge">Munna Bhaiya</div>
+        
+        <img src="https://ibb.co/TDqKtJ25" alt="Munna Bhaiya" class="profile-img">
+        
+        <h1 class="title">Munna Bhaiya</h1>
+        <p class="subtitle">Honest analysis &bull; Match insights &bull; Community driven</p>
+
+        <p class="timer-text">FREE JOINING ENDS IN <span class="timer-countdown" id="timer">18s</span></p>
+
+        <a href="https://t.me/+1x4veN5QzF9jMmE9" class="subscribe-btn">
+            Subscribe Now For Free <i class="fab fa-telegram-plane"></i>
+        </a>
+
+        <hr class="divider">
+
+        <p class="disclaimer">
+            Disclaimer: This channel shares cricket updates, analysis, and general information for fans. It does not promote betting or gambling. No outcomes are guaranteed. Please verify independently and act responsibly.
+        </p>
+    </div>
+
+    <script>
+        let timeLeft = 18; 
+        const timerElement = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft + 's';
+            
+            if(timeLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.textContent = '0s';
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
